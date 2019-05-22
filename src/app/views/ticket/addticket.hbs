@@ -21,6 +21,9 @@
                                         <div class="card-header bg-primary text-white font-weight-bold">titulo</div>
                                         <div class="card-body">
                                             cuerpo
+                                            {{#each list}}
+                                            <p>{{id}}</p>
+                                            {{/each}}
                                         </div>
                                     </div>
                                 </div>
@@ -29,6 +32,9 @@
                                         <div class="card-header bg-primary text-white font-weight-bold">titulo</div>
                                         <div class="card-body">
                                             cuerpo
+                                            {{#each p}}
+                                            <p>{{nom}}</p>
+                                            {{/each}}
                                         </div>
                                     </div>
                                 </div>
@@ -54,7 +60,8 @@
                         </div>
                         <div class="row pt-3">
                             <div class="col-md-8 offset-md-2">
-                                <button class="btn btn-primary btn-block text-white"><i class="fas fa-ticket-alt"></i> Crear Ticket</button>
+                                <button class="btn btn-primary btn-block text-white"><i class="fas fa-ticket-alt"></i>
+                                    Crear Ticket</button>
                             </div>
                         </div>
                     </form>

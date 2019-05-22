@@ -1,0 +1,25 @@
+CREATE DATABASE mesa;
+
+USE MESA;
+
+CREATE TABLE tecnico (
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(16) NOT NULL,
+    password VARCHAR(60) NOT NULL,
+    fullname VARCHAR(100) NOT NULL
+);
+
+USE MESA;
+
+CREATE TABLE tsolicitud(
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tsolicitud VARCHAR(16) NOT NULL,
+);
+
+USE MESA;
+
+CREATE TABLE problema(
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id_tsolicitud INT(11),
+    problema VARCHAR(16) NOT NULL,
+);
