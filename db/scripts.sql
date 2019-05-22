@@ -22,4 +22,5 @@ CREATE TABLE problema(
     id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     id_tsolicitud INT(11),
     problema VARCHAR(16) NOT NULL,
+    FOREIGN KEY (id_tsolicitud) REFERENCES tsolicitud(id)
 );

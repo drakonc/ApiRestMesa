@@ -7,6 +7,7 @@ import exphbs from 'express-handlebars';
 //Importacion de las Rutas
 import indexRouter from './routes/index.routes';
 import ticketRouter from './routes/ticket.routes'
+import tsolicitudRouter from './routes/api/tsolicitud.routes'
 
 export class App {
   private app: Application;
@@ -22,17 +23,17 @@ export class App {
   seting(): void {
     this.app.set('port', this.port || process.env.PORT || 3000);
     this.app.set('views', path.join(__dirname, 'views'));
-    this.app.use(express.static(path.join(__dirname, "public")));
+    this.app.use(express.static(path.join(__dirname, 'public')));
   }
 
   handlebars() {
     this.app.engine('.hbs', exphbs({
       defaultLayout: 'main',
-      layoutsDir: path.join(this.app.get("views"), "layouts"),
-      partialsDir: path.join(this.app.get("views"), "partials"),
-      extname: ".hbs",
+      layoutsDir: path.join(this.app.get('views'), 'layouts'),
+      partialsDir: path.join(this.app.get('views'), 'partials'),
+      extname: '.hbs',
     }));
-    this.app.set("view engine", ".hbs");
+    this.app.set('view engine', '.hbs');
   }
 
   middleware(): void {
@@ -45,6 +46,7 @@ export class App {
   routers(): void {
     this.app.use('/', indexRouter);
     this.app.use('/ticket', ticketRouter)
+    this.app.use('/api', tsolicitudRouter)
   }
 
   async listen() {

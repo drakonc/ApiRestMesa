@@ -7,6 +7,7 @@ class TicketController {
         let p: any[] = [{ nom: 'hola' }, { nom: 'mundo' }]
         res.render('ticket/addticket', { list, p })
     }
+
 }
 
 const ticketController = new TicketController();
