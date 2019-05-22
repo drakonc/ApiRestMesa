@@ -5,8 +5,8 @@ import path from 'path';
 import exphbs from 'express-handlebars';
 
 //Importacion de las Rutas
-import indexRouter from './routers/index.routers';
-import { timingSafeEqual } from 'crypto';
+import indexRouter from './routes/index.routes';
+import ticketRouter from './routes/ticket.routes'
 
 export class App {
   private app: Application;
@@ -22,6 +22,7 @@ export class App {
   seting(): void {
     this.app.set('port', this.port || process.env.PORT || 3000);
     this.app.set('views', path.join(__dirname, 'views'));
+    this.app.use(express.static(path.join(__dirname, "public")));
   }
 
   handlebars() {
@@ -43,6 +44,7 @@ export class App {
 
   routers(): void {
     this.app.use('/', indexRouter);
+    this.app.use('/ticket', ticketRouter)
   }
 
   async listen() {
