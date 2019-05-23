@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import mysql from '../../config/database';
-import { TSolicitud } from '../../model/tsolicitud.model';
+import mysql from '../config/database';
+import { TSolicitud } from '../model/tsolicitud.model';
 
 class TSolicitudController {
 

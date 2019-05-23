@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import tsolicitudController from '../../controller/api/tsolicitud.controller';
+import tsolicitudController from '../controller/tsolicitud.controller';
 
 class TSolicitudRouter {
 

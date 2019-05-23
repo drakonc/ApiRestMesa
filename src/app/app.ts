@@ -4,8 +4,7 @@ import cors from 'cors';
 
 //Importacion de las Rutas
 import indexRouter from './routes/index.routes';
-import ticketRouter from './routes/ticket.routes'
-import tsolicitudRouter from './routes/api/tsolicitud.routes'
+import tsolicitudRouter from './routes/tsolicitud.routes'
 
 export class App {
   private app: Application;
@@ -31,8 +30,7 @@ export class App {
 
   routers(): void {
     this.app.use('/', indexRouter);
-    this.app.use('/ticket', ticketRouter)
-    this.app.use('/api', tsolicitudRouter)
+    this.app.use('/api', tsolicitudRouter);
   }
 
   async listen() {

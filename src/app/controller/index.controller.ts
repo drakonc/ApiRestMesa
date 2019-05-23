@@ -2,8 +2,8 @@ import { Request, Response } from 'express';
 
 class IndexController {
 
-    public async index(req: Request, res: Response) {
-        res.render('index/index');
+    public index(req: Request, res: Response) {
+        res.status(200).json({mensaje: 'Bienbenido'})
     }
 
 }
